@@ -6,11 +6,6 @@ author: Luning Ding, Yiming Xue, (ADD YOUR NAME HERE)
 date: 2024-12-07 01:09:00
 ---
 
-{: class="table-of-content"}
-* TOC
-{:toc}
-
-
 ## Introduction of Point Cloud
 ---
 
