@@ -173,10 +173,10 @@ The method was evaluated on the **SUN RGB-D** and **ScanNet** datasets, two wide
 #### Performance Metrics
 - Mean Average Precision (mAP) at IoU thresholds of 0.25 and 0.5 was used to evaluate the model.
 
-| Dataset      | Metric     | Deep Hough Voting | VoteNet       | Frustum PointNets |
+| Dataset      | Metric     | VoteNet           | BoxNet        | Frustum PointNets |
 |--------------|------------|-------------------|---------------|-------------------|
-| SUN RGB-D    | mAP@0.25   | **64.0%**         | 57.6%         | 54.0%             |
-| ScanNet      | mAP@0.25   | **58.0%**         | 54.1%         | 50.5%             |
+| SUN RGB-D    | mAP@0.25   | **57.7%**         | 53.0%         | 51.2%             |
+| ScanNet      | mAP@0.25   | **58.6%**         | 45.4%         | 40.5%             |
 
 
 ---
