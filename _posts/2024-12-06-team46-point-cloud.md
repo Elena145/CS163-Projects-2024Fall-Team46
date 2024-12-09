@@ -137,11 +137,7 @@ The proposed model is composed of three key components: a feature extraction net
    The feature extraction module is based on **PointNet++**, which processes raw, unordered point clouds to extract hierarchical features. PointNet++ operates by grouping neighboring points into local regions and applying feature aggregation operations. This design enables the network to capture both fine-grained geometric details and global contextual information.
 
 2. **Voting Module**  
-   The voting module is the core innovation of the framework. Each point predicts offsets to potential object centers. These offsets, represented as $\text{Vote Position} = \text{Point Position} + (\Delta x, \Delta y, \Delta z)$, are added to the original point coordinates to generate votes. Each vote is also associated with a confidence score indicating its likelihood of being a valid object center. The voting process can be summarized as:
-$$
-\text{Vote Position} = \text{Point Position} + (\Delta x, \Delta y, \Delta z)
-$$
-   Votes from different points are then aggregated in a spatially consistent manner.
+   The voting module is the core innovation of the framework. Each point predicts offsets to potential object centers. These offsets, represented as $\text{Vote Position} = \text{Point Position} + (\Delta x, \Delta y, \Delta z)$, are added to the original point coordinates to generate votes. Each vote is also associated with a confidence score indicating its likelihood of being a valid object center. The voting process can be summarized as: $\text{Vote Position} = \text{Point Position} + (\Delta x, \Delta y, \Delta z)$. Votes from different points are then aggregated in a spatially consistent manner.
 
 4. **Vote Clustering and Object Proposals**  
    After votes are generated, they are clustered based on their spatial proximity using a learnable clustering mechanism. High-confidence vote clusters correspond to potential object centers. From these clusters, the object proposal network generates 3D bounding boxes and predicts semantic labels for each detected object.
@@ -152,9 +148,9 @@ $$
 
 The network is trained end-to-end using a combination of carefully designed loss functions:
 - **Voting Loss**: Encourages accurate prediction of offsets between input points and ground truth object centers, defined as:
-  $$
-  \mathcal{L}_{vote} = \frac{1}{N}\sum_{i=1}^{N} ||\text{Predicted Offset}_i - \text{Ground Truth Offset}_i||_2
-  $$
+$$
+\mathcal{L}_{vote} = \frac{1}{N}\sum_{i=1}^{N} ||\text{Predicted Offset}_i - \text{Ground Truth Offset}_i||_2
+$$
 - **Objectness Loss**: Classifies each point as belonging to an object or the background.
 - **Bounding Box Regression Loss**: Refines the predicted bounding boxes by minimizing the difference between the predicted and ground truth dimensions.
 
