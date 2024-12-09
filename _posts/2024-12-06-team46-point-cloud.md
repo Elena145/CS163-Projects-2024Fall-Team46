@@ -147,7 +147,8 @@ The proposed model is composed of three key components: a feature extraction net
 ### 4. Training and Loss Functions
 
 The network is trained end-to-end using a combination of carefully designed loss functions:
-- **Voting Loss**: Encourages accurate prediction of offsets between input points and ground truth object centers, defined as: $\mathcal{L}_{\text{vote}} = \frac{1}{N} \sum_{i=1}^{N} \|\text{Predicted Offset}_i - \text{Ground Truth Offset}_i\|_2$
+- **Voting Loss**: Encourages accurate prediction of offsets between input points and ground truth object centers, defined as: 
+$\mathcal{L}_{\text{vote}} = \frac{1}{N} \sum_{i=1}^{N} \|\text{Predicted Offset}_i - \text{Ground Truth Offset}_i\|_2$
 - **Objectness Loss**: Classifies each point as belonging to an object or the background.
 - **Bounding Box Regression Loss**: Refines the predicted bounding boxes by minimizing the difference between the predicted and ground truth dimensions.
 
