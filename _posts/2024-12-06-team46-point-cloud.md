@@ -41,7 +41,7 @@ This paper introduces **PointNet++**, an extension of PointNet, which incorporat
 
 ### 3. Model Architecture
 
-![Alt Text](./assets/images/team-46/PointNet++_Architecture.png)
+![Alt Text](assets/images/team-46/PointNet++_Architecture.png)
 
 PointNet++ builds on the original PointNet architecture by introducing a hierarchical structure. The architecture consists of three main modules:
 
