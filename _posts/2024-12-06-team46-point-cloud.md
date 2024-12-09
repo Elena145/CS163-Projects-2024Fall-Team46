@@ -128,6 +128,9 @@ This paper introduces a novel framework called **Deep Hough Voting**, inspired b
 
 ### 3. Model Architecture
 
+![Alt Text](../assets/images/team-46/VoteNet_Architecture.png)
+_The above figure is an illustration of the VoteNet architecture for 3D object detection in point clouds. Given an input point cloud of N points with XYZ coordinates, a backbone network (implemented with PointNet++ layers) subsamples, learns deep features on the points, and outputs a subset of M points but extended by C-dim features. This subset of points is considered as seed points. Each seed independently generates a vote through a voting module. Then the votes are grouped into clusters and processed by the proposal module to generate the final proposals. The classified and NMSed proposals become the final 3D bounding boxes output._
+
 The proposed model is composed of three key components: a feature extraction network, a voting module, and an object proposal network.
 
 1. **Point Feature Extraction**  
@@ -161,6 +164,9 @@ The authors use techniques such as random rotations, translations, and cropping 
 ---
 
 ### 5. Experimental Results
+
+![Alt Text](../assets/images/team-46/VoteNet_Results.png)
+_Both left and right panels show (from left to right): an image of the scene, 3D object detection by VoteNet, and ground-truth annotations._ 
 
 The method was evaluated on the **SUN RGB-D** and **ScanNet** datasets, two widely used benchmarks for 3D object detection. **SUN RGB-D** features diverse indoor scenes with challenging occlusions and clutter, while **ScanNet** consists of dense reconstructions of indoor spaces.
 
