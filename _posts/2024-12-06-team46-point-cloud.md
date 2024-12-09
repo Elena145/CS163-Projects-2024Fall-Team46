@@ -3,9 +3,9 @@
 ## Table of Contents
 - [Introduction of Point Cloud](#introduction-of-point-cloud)
 - [Overview of Three Papers](#overview-of-three-papers)
-  - [1. PointNet](#PointNet:-Deep-Learning-on-Point-Sets-for-3D-Classification-and-Segmentation)
-  - [2. PointNet++](#PointNet++:-Deep-Hierarchical-Feature-Learning-on-Point-Sets-in-a-Metric-Space)
-  - [3. VoteNet](#Deep-Hough-Voting-for-3D-Object-Detection-in-Point-Clouds)
+  - [1. PointNet](#1-PointNet-Deep-Learning-on-Point-Sets-for-3D-Classification-and-Segmentation)
+  - [2. PointNet++](#2-PointNet-Deep-Hierarchical-Feature-Learning-on-Point-Sets-in-a-Metric-Space)
+  - [3. VoteNet](#3-Deep-Hough-Voting-for-3D-Object-Detection-in-Point-Clouds)
 - [Implementation of PointNet++ on KITTI](#implementation-of-pointnet-on-kitti)
 
 
@@ -13,10 +13,10 @@
 ## Introduction of Point Cloud
 ---
 
-## PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
+## 1. PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
 ---
 
-## PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
+## 2. PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 
 ### 1. Introduction
 
@@ -94,7 +94,7 @@ The reliance on radius-based grouping can lead to inefficiencies for very dense 
 
 
 
-## Deep Hough Voting for 3D Object Detection in Point Clouds
+## 3. Deep Hough Voting for 3D Object Detection in Point Clouds
 
 ### 1. Introduction
 
