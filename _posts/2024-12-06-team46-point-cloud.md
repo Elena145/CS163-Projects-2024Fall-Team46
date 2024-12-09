@@ -80,7 +80,7 @@ PointNet++ is evaluated on several benchmark datasets for 3D point cloud learnin
 ### 6. Strengths and Limitations
 
 #### Strengths
-PointNet++ significantly improves over its predecessor by introducing a hierarchical structure for learning local features. The use of farthest point sampling ensures that sampled points are distributed uniformly, preserving the overall geometry of the point cloud. The ability to handle varying point densities through multi-scale grouping makes it robust to real-world data variability. Additionally, its simplicity and efficiency allow it to be applied to large-scale datasets.
+PointNet++ significantly improves over PointNet by introducing a hierarchical structure for learning local features. The use of farthest point sampling ensures that sampled points are distributed uniformly, preserving the overall geometry of the point cloud. The ability to handle varying point densities through multi-scale grouping makes it robust to real-world data variability. Additionally, its simplicity and efficiency allow it to be applied to large-scale datasets.
 
 #### Limitations
 The reliance on radius-based grouping can lead to inefficiencies for very dense point clouds, as the neighborhood search can become computationally expensive. Furthermore, the hierarchical structure introduces additional complexity compared to the original PointNet and requires careful tuning of hyperparameters like radius size and group count. The model also struggles with very sparse point clouds, where local neighborhoods may not contain enough points to extract meaningful features. Lastly, it does not incorporate contextual information from other data modalities, such as RGB images, which could further enhance its performance.
