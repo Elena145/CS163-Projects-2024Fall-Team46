@@ -42,6 +42,7 @@ This paper introduces **PointNet++**, an extension of PointNet, which incorporat
 ### 3. Model Architecture
 
 ![Alt Text](../assets/images/team-46/PointNet++_Architecture.png)
+This figure illustration of the hierarchical feature learning architecture and its application for set segmentation and classification using points in 2D Euclidean space as an example. 
 
 PointNet++ builds on the original PointNet architecture by introducing a hierarchical structure. The architecture consists of three main modules:
 
@@ -67,6 +68,10 @@ To prevent overfitting, data augmentation techniques such as random rotations, t
 ### 5. Experimental Results
 
 PointNet++ is evaluated on several benchmark datasets for 3D point cloud learning tasks, including object classification, part segmentation, and scene segmentation.
+
+![Alt Text](../assets/images/team-46/PointNet++_Scannet_labeling_results.png)
+
+From the figure above, it is shown tahtPointNet captures the overall layout of the room correctly but fails to discover the furniture. PointNet++, in contrast, is much better at segmenting objects besides the room layout.
 
 #### Performance Metrics
 
