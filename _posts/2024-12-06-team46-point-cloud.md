@@ -7,7 +7,7 @@
   - [2. PointNet++](#2-PointNet-Deep-Hierarchical-Feature-Learning-on-Point-Sets-in-a-Metric-Space)
   - [3. VoteNet](#3-VoteNet-Deep-Hough-Voting-for-3D-Object-Detection-in-Point-Clouds)
 - [Implementation of PointNet++ on KITTI](#implementation-of-pointnet-on-kitti)
-
+- [Code Explorations of Pointnet and Pointnet++ on KITTI](#code-explorations-of-point-cloud-models-on-kitti)
 
 
 ## Introduction of Point Cloud
@@ -222,5 +222,11 @@ Generalization to Outdoor Environments:
 Modify VoteNet to handle large-scale, sparse datasets like KITTI by introducing global-local attention mechanisms to better capture long-range dependencies.
 Augmented Supervision:
 
+
+## Code Explorations of Pointnet and Pointnet++ on KITTI
+
+Our Google Colab containing an existing implementation of Pointnet and our own Pointnet++ implementation from scratch using PyTorch can be found in the link below. We provide sample train, test, and validation code for both Pointnet and Pointnet++ on the KITTI dataset obtained from Kaggle. 
+
+Link to code: https://colab.research.google.com/drive/1b2yyaaWzeot0D8BrKng59TZfZrlnp8a5?usp=sharing 
 
 
