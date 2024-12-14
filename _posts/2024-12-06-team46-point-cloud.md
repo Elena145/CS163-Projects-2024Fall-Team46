@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Introduction of Point Cloud](#introduction-of-point-cloud)
 - [Overview of Three Papers](#overview-of-three-papers)
-  - [1. PointNet](#1-PointNet-Deep-Learning-on-Point-Sets-for-3D-Classification-and-Segmentation)
+  - [1. Before PointNet](#1-PointNet-Deep-Learning-on-Point-Sets-for-3D-Classification-and-Segmentation)
   - [2. PointNet++](#2-PointNet-Deep-Hierarchical-Feature-Learning-on-Point-Sets-in-a-Metric-Space)
   - [3. VoteNet](#3-VoteNet-Deep-Hough-Voting-for-3D-Object-Detection-in-Point-Clouds)
 - [Implementation of PointNet++ on KITTI](#implementation-of-pointnet-on-kitti)
@@ -12,9 +12,29 @@
 
 ## Introduction of Point Cloud
 ---
+PointNet introduced a groundbreaking approach to processing 3D point cloud data directly, bypassing the need for voxelization or other preprocessing techniques. Its core innovation lies in its ability to handle unordered point sets while maintaining permutation invariance and learning robust features for tasks such as classification and segmentation.
 
-## 1. PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation
----
+Key Characteristics of PointNet:
+Input Representation:
+
+Directly takes raw 3D point cloud data as input, which are unordered collections of points represented by their 
+(𝑥,𝑦,𝑧) coordinates.
+
+Permutation Invariance:
+PointNet uses symmetric functions, such as max-pooling, to aggregate features from individual points, ensuring that the network is invariant to the order of the input points.
+
+Global Context Capture:
+By applying shared multi-layer perceptrons (MLPs) to each point and aggregating features globally, PointNet effectively captures the overall structure of the point cloud.
+
+
+## 1. Before PointNet : Voxel/Multi-View/Feature Based Methods
+The field of 3D shape representation has long faced challenges due to the inherent complexities of 3D data. Traditional voxel-based methods provided an early solution by converting 3D data into regular grids, allowing the use of 3D convolutional neural networks. While effective for capturing intricate geometries and internal structures, these methods suffered from high memory usage and a loss of fine details due to discretization. Attempts to address this, such as octree-based approaches, improved memory efficiency but struggled with accurately modeling smooth surfaces.
+
+Multi-view methods emerged as another promising approach, leveraging the success of 2D CNNs by projecting 3D shapes into multiple 2D images from various viewpoints. Although this approach enhanced computational efficiency and utilized advanced 2D image recognition techniques, it faltered when handling occluded regions or capturing the full complexity of 3D structures.
+
+Feature-based methods, which rely on manually engineered descriptors, offered interpretability and computational simplicity. However, they were inherently limited by the representational power of handcrafted features, often failing to capture the intricate relationships within 3D data.
+
+These limitations underscored the need for a new approach capable of directly processing raw 3D point clouds without imposing grid structures or requiring feature engineering. PointNet, introduced in 2017, addressed this gap by preserving geometric information, achieving permutation invariance, and offering a more efficient and scalable solution to 3D shape representation. It represented a significant step forward, paving the way for more sophisticated and versatile 3D architectures.
 
 ## 2. PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space
 
@@ -157,6 +177,7 @@ The network is trained end-to-end using a combination of carefully designed loss
 The authors use techniques such as random rotations, translations, and cropping to improve robustness. These augmentations help the model generalize better to unseen environments and mitigate overfitting.
 
 ---
+## Implementation of PointNet++ on KITTI
 
 ### 5. Experimental Results
 
@@ -186,5 +207,20 @@ The vote clustering mechanism introduces computational overhead, making it less 
 
 ---
 
-## Implementation of PointNet++ on KITTI
+### 7. Further Works
+
+Multi-Modal Integration:
+Extend VoteNet by fusing point cloud data with RGB images (e.g., via a transformer-based fusion mechanism) to improve object detection in complex environments, as explored in PV-RCNN for autonomous driving.
+
+Lightweight Architectures:
+Develop a simplified version of PointNet++ that uses voxel-based approximations for initial feature extraction (e.g., Minkowski Engine) to reduce computation costs while retaining hierarchical feature learning.
+
+Handling Temporal Data:
+Incorporate recurrent layers or temporal transformers into PointNet++ to process sequential point cloud data for tasks like 3D action recognition or tracking objects over time.
+
+Generalization to Outdoor Environments:
+Modify VoteNet to handle large-scale, sparse datasets like KITTI by introducing global-local attention mechanisms to better capture long-range dependencies.
+Augmented Supervision:
+
+
 
